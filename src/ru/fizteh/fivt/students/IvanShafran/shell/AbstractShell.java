@@ -43,6 +43,10 @@ abstract public class AbstractShell {
         }
     }
 
+    public void printInformation(String information) {
+        System.out.println(information);
+    }
+
     /**
      * ***********************-Command Processing-*************************
      */
