@@ -43,7 +43,7 @@ abstract public class AbstractShell {
         }
     }
 
-    public void printInformation(String information) {
+    public static void printInformation(String information) {
         System.out.println(information);
     }
 

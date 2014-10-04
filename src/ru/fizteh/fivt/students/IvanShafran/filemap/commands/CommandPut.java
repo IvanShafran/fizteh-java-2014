@@ -1,6 +1,7 @@
 package ru.fizteh.fivt.students.IvanShafran.filemap.commands;
 
 import ru.fizteh.fivt.students.IvanShafran.filemap.DBFile;
+import ru.fizteh.fivt.students.IvanShafran.shell.AbstractShell;
 import ru.fizteh.fivt.students.IvanShafran.shell.commands.Command;
 
 import java.util.ArrayList;
@@ -20,11 +21,24 @@ public class CommandPut extends Command {
         }
     }
 
+    private void putValue(String key, String value) {
+        dataBaseFile.getHashMap().put(key, value);
+    }
+
     public void execute(ArrayList<String> args) throws Exception {
         checkArgs(args);
 
+        String key = args.get(0);
+        String value = args.get(1);
 
+        if (dataBaseFile.getHashMap().containsKey(key)) {
+            AbstractShell.printInformation("overwrite old value");
+        }
+        else {
+            AbstractShell.printInformation("new");
+        }
 
+        putValue(key, value);
     }
 
     CommandPut(DBFile file) {
