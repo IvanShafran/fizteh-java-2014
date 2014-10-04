@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 
 public class CommandGet extends Command {
-    DBFile dataBaseFile;
+    private DBFile dataBaseFile;
 
     @Override
     public void checkArgs(ArrayList<String> args) throws Exception {
@@ -32,7 +32,7 @@ public class CommandGet extends Command {
         AbstractShell.printInformation(dataBaseFile.getHashMap().get(key));
     }
 
-    CommandGet(DBFile file) {
+    public CommandGet(DBFile file) {
         dataBaseFile = file;
     }
 }

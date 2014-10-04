@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 
 public class CommandPut extends Command {
-    DBFile dataBaseFile;
+    private DBFile dataBaseFile;
 
     @Override
     public void checkArgs(ArrayList<String> args) throws Exception {
@@ -41,7 +41,7 @@ public class CommandPut extends Command {
         putValue(key, value);
     }
 
-    CommandPut(DBFile file) {
+    public CommandPut(DBFile file) {
         dataBaseFile = file;
     }
 }

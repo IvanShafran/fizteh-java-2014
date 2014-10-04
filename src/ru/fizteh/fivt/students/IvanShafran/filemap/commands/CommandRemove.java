@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 
 public class CommandRemove extends Command {
-    DBFile dataBaseFile;
+    private DBFile dataBaseFile;
 
     @Override
     public void checkArgs(ArrayList<String> args) throws Exception {
@@ -32,7 +32,7 @@ public class CommandRemove extends Command {
         dataBaseFile.getHashMap().remove(key);
     }
 
-    CommandRemove(DBFile file) {
+    public CommandRemove(DBFile file) {
         dataBaseFile = file;
     }
 }

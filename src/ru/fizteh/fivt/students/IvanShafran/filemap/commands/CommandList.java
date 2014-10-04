@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 
 public class CommandList extends Command {
-    DBFile dataBaseFile;
+    private DBFile dataBaseFile;
 
     public void execute(ArrayList<String> args) throws Exception {
         StringBuilder list = new StringBuilder();
@@ -25,7 +25,7 @@ public class CommandList extends Command {
         AbstractShell.printInformation(list.toString());
     }
 
-    CommandList(DBFile file) {
+    public CommandList(DBFile file) {
         dataBaseFile = file;
     }
 }
