@@ -5,7 +5,7 @@ import ru.fizteh.fivt.students.IvanShafran.shell.commands.*;
 import java.util.*;
 
 
-abstract class AbstractShell {
+abstract public class AbstractShell {
     public Map<String, Command> command;
     public boolean startedInteractiveMode;
 
@@ -34,7 +34,7 @@ abstract class AbstractShell {
      * ***********************-Exception Printing-*************************
      */
 
-    private void printException(String exceptionText) {
+    public void printException(String exceptionText) {
         if (startedInteractiveMode) {
             System.out.println(exceptionText);
         } else {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 
-class CommandText {
+public class CommandText {
     public String commandName;
     public ArrayList<String> arguments;
 
