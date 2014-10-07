@@ -30,6 +30,7 @@ public class CommandRemove extends Command {
         }
 
         dataBaseFile.getHashMap().remove(key);
+        dataBaseFile.writeHashMapToFile();
     }
 
     public CommandRemove(DBFile file) {

@@ -43,7 +43,7 @@ public class FileMap extends AbstractShell {
             dataBaseFile.readFile();
         }
         catch (Exception e) {
-            printException(e.getMessage());
+            printException("file didn't read");
         }
     }
 

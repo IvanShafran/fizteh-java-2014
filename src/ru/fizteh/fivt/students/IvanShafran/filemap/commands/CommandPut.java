@@ -39,6 +39,7 @@ public class CommandPut extends Command {
         }
 
         putValue(key, value);
+        dataBaseFile.writeHashMapToFile();
     }
 
     public CommandPut(DBFile file) {

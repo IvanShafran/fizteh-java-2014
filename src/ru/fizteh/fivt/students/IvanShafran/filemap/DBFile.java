@@ -27,24 +27,31 @@ public class DBFile {
     public void readFile() throws Exception {
         HashMap readingHashMap = new HashMap();
 
-        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(workingFile))) {
-            String key = (String) objectInputStream.readObject();
-            String value = (String) objectInputStream.readObject();
+        try (DataInputStream dataInputStream = new DataInputStream(new FileInputStream(workingFile))) {
+
+            while (dataInputStream.available() != 0) {
+                String key = dataInputStream.readUTF();
+                String value = dataInputStream.readUTF();
+
+                readingHashMap.put(key, value);
+            }
+        }
+        catch (Exception e) {
+            throw new Exception("file didn't read");
         }
 
         hashMap = readingHashMap;
     }
 
     public void writeHashMapToFile() throws Exception {
-        if (hashMap == null) {
-            throw new Exception("hashMap doesn't read yet");
-        }
-
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(workingFile))) {
+        try (DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream(workingFile))) {
             for (String key : hashMap.keySet()) {
-                objectOutputStream.writeObject(key);
-                objectOutputStream.writeObject(hashMap.get(key));
+                dataOutputStream.writeUTF(key);
+                dataOutputStream.writeUTF(hashMap.get(key));
             }
+        }
+        catch (Exception e) {
+            throw new Exception("error during writing string");
         }
     }
 
