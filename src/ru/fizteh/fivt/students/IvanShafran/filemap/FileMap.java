@@ -11,9 +11,7 @@ public class FileMap extends AbstractShell {
     private DBFile dataBaseFile;
 
     private void checkWorkingFile() throws Exception {
-        //String path = System.getProperty("db.file");
-        String testPath = "C:/test/1.bin";
-        String path = testPath;
+        String path = System.getProperty("db.file");
 
         File workingFile = new File(Paths.get(path).toAbsolutePath().toString());
 
@@ -33,9 +31,7 @@ public class FileMap extends AbstractShell {
     }
 
     private void initDBFile() {
-        //String path = System.getProperty("db.file");
-        String testPath = "C://test//1.bin";
-        String path = testPath;
+        String path = System.getProperty("db.file");
 
         dataBaseFile = new DBFile(new File(Paths.get(path).toAbsolutePath().toString()));
 
