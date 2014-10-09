@@ -11,7 +11,13 @@ public class FileMap extends AbstractShell {
     private DBFile dataBaseFile;
 
     private void checkWorkingFile() throws Exception {
-        File workingFile = Paths.get(System.getProperty("user.dir")).resolve(System.getProperty("db.file")).toFile();
+        File workingFile;
+        try {
+            workingFile =
+                    Paths.get(System.getProperty("user.dir")).resolve(System.getProperty("db.file")).toFile();
+        } catch (Exception e) {
+            throw new Exception("wrong path to db file");
+        }
 
         if (!workingFile.exists() || workingFile.isDirectory()) {
             throw new Exception("wrong path to db file");
@@ -28,15 +34,20 @@ public class FileMap extends AbstractShell {
         command.put("remove", new CommandRemove(dataBaseFile));
     }
 
-    private void initDBFile() {
-        File workingFile = Paths.get(System.getProperty("user.dir")).resolve(System.getProperty("db.file")).toFile();
+    private void initDBFile() throws Exception {
+        File workingFile;
+        try {
+            workingFile =
+                    Paths.get(System.getProperty("user.dir")).resolve(System.getProperty("db.file")).toFile();
+        } catch (Exception e) {
+            throw new Exception("wrong path to db file");
+        }
 
         dataBaseFile = new DBFile(workingFile);
 
         try {
             dataBaseFile.readFile();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             printException("file didn't read");
         }
     }
@@ -46,8 +57,7 @@ public class FileMap extends AbstractShell {
             checkWorkingFile();
             initDBFile();
             initCommands();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             printException(e.getMessage());
         }
     }

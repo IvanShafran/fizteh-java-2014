@@ -2,7 +2,6 @@ package ru.fizteh.fivt.students.IvanShafran.filemap.commands;
 
 
 import ru.fizteh.fivt.students.IvanShafran.filemap.DBFile;
-import ru.fizteh.fivt.students.IvanShafran.shell.AbstractShell;
 import ru.fizteh.fivt.students.IvanShafran.shell.commands.Command;
 
 import java.util.ArrayList;
@@ -13,8 +12,7 @@ public class CommandExit extends Command {
     public void execute(ArrayList<String> args) {
         try {
             dbFile.writeHashMapToFile();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.err.println("error during writing file");
             System.exit(-1);
         }

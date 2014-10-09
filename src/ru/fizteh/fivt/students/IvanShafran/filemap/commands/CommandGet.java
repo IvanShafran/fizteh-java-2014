@@ -24,8 +24,7 @@ public class CommandGet extends Command {
 
         if (dataBaseFile.getHashMap().containsKey(key)) {
             AbstractShell.printInformation("found");
-        }
-        else {
+        } else {
             AbstractShell.printInformation("not found");
         }
 

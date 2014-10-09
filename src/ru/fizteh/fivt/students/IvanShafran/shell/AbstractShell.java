@@ -5,7 +5,7 @@ import ru.fizteh.fivt.students.IvanShafran.shell.commands.*;
 import java.util.*;
 
 
-abstract public class AbstractShell {
+public class AbstractShell {
     public Map<String, Command> command;
     public boolean startedInteractiveMode;
 
