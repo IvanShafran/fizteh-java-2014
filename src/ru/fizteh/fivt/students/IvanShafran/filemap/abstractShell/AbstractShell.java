@@ -1,11 +1,9 @@
-package ru.fizteh.fivt.students.IvanShafran.shell;
-
-import ru.fizteh.fivt.students.IvanShafran.shell.commands.*;
+package ru.fizteh.fivt.students.IvanShafran.filemap.abstractShell;
 
 import java.util.*;
 
 
-abstract class AbstractShell {
+public class AbstractShell {
     public Map<String, Command> command;
     public boolean startedInteractiveMode;
 
@@ -40,13 +38,17 @@ abstract class AbstractShell {
      * ***********************-Exception Printing-*************************
      */
 
-    private void printException(String exceptionText) {
+    public void printException(String exceptionText) {
         if (startedInteractiveMode) {
             System.out.println(exceptionText);
         } else {
             System.err.println(exceptionText);
             System.exit(1);
         }
+    }
+
+    public static void printInformation(String information) {
+        System.out.println(information);
     }
 
     /**

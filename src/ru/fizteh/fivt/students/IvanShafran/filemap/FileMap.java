@@ -1,7 +1,7 @@
 package ru.fizteh.fivt.students.IvanShafran.filemap;
 
 import ru.fizteh.fivt.students.IvanShafran.filemap.commands.*;
-import ru.fizteh.fivt.students.IvanShafran.filemap.abstractShellAbstractShell;
+import ru.fizteh.fivt.students.IvanShafran.filemap.abstractShell.AbstractShell;
 
 import java.io.File;
 import java.nio.file.Paths;

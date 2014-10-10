@@ -1,8 +1,8 @@
 package ru.fizteh.fivt.students.IvanShafran.filemap.commands;
 
 import ru.fizteh.fivt.students.IvanShafran.filemap.DBFile;
-import ru.fizteh.fivt.students.IvanShafran.shell.AbstractShell;
-import ru.fizteh.fivt.students.IvanShafran.shell.commands.Command;
+import ru.fizteh.fivt.students.IvanShafran.filemap.abstractShell.AbstractShell;
+import ru.fizteh.fivt.students.IvanShafran.filemap.abstractShell.Command;
 
 import java.util.ArrayList;
 

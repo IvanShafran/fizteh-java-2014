@@ -1,4 +1,4 @@
-package ru.fizteh.fivt.students.IvanShafran.shell.commands;
+package ru.fizteh.fivt.students.IvanShafran.filemap.abstractShell;
 
 import java.io.File;
 import java.nio.file.Paths;
