@@ -1,7 +1,10 @@
 package ru.fizteh.fivt.storage.strings;
 
+<<<<<<< HEAD
 import java.util.List;
 
+=======
+>>>>>>> 555704442aab331a9ecebbe7ebbac412b2e0f79e
 /**
  * @author Fedor Lavrentyev
  * @author Dmitriy Komanov
@@ -65,6 +68,7 @@ public interface Table {
      * @return Количество отменённых ключей.
      */
     int rollback();
+<<<<<<< HEAD
 
     /**
      * Выводит список ключей таблицы
@@ -72,4 +76,6 @@ public interface Table {
      * @return Список ключей.
      */
     List<String> list();
+=======
+>>>>>>> 555704442aab331a9ecebbe7ebbac412b2e0f79e
 }

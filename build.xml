@@ -34,7 +34,11 @@
     </target>
 
     <target name="run.checkstyle" description="Checkstyle utility (code conventions)">
+<<<<<<< HEAD
         <taskdef resource="checkstyletask.properties" classpath="lib/checkstyle-5.9-SNAPSHOT-all.jar"/>
+=======
+        <taskdef resource="checkstyletask.properties" classpath="lib/checkstyle-5.6-all.jar"/>
+>>>>>>> 555704442aab331a9ecebbe7ebbac412b2e0f79e
 
         <checkstyle
                 config="lib/checkstyle-rules.xml"
